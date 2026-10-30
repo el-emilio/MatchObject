@@ -128,7 +128,7 @@ public class ControlFiguras : MonoBehaviour
         {
             tamanoElegido = true;
             indice = 0;
-            figuraActual.transform.rotation = Quaternion.Euler(rotaciones[0]);
+            figuraActual.transform.eulerAngles = rotaciones[0];
         }
     }
 
@@ -137,7 +137,7 @@ public class ControlFiguras : MonoBehaviour
         if (botonB.WasPressedThisFrame())
         {
             indice = (indice + 1) % rotaciones.Length;
-            figuraActual.transform.rotation = Quaternion.Euler(rotaciones[indice]);
+            figuraActual.transform.eulerAngles = rotaciones[indice];
         }
 
         if (gatilloElegir.WasPressedThisFrame())
@@ -150,6 +150,8 @@ public class ControlFiguras : MonoBehaviour
     {
         if (figuraElegida && colorElegido && tamanoElegido && rotacionElegida)
         {
+
+            //Here is where you have to work Armando
             confirmado = true;
             Debug.Log("Respuesta confirmada");
         }
